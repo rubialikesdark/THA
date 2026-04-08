@@ -138,7 +138,7 @@ a{color:inherit;text-decoration:none}
 .file-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(26,10,14,.4);font-size:16px}
 .file-k{font:15px 'Cormorant Garamond',serif;color:var(--red);letter-spacing:2px;flex-shrink:0}
 .file-v{color:var(--body);text-align:right}
-.detail-quote{color:var(--gold-d);font-style:italic;font-size:17px;line-height:1.7;margin-top:12px;padding-left:12px;border-left:2px solid var(--red-d)}
+
 .detail-desc{font-size:17px;line-height:1.9;margin-top:10px;font-weight:300}
 
 /* PLAY */
@@ -157,7 +157,8 @@ a{color:inherit;text-decoration:none}
   .diamond-name{font-size:12px !important}
   .loc-top{grid-template-columns:repeat(2,minmax(200px,280px)) !important;justify-content:center !important}
 .loc-bottom{grid-template-columns:repeat(3,minmax(180px,250px)) !important;justify-content:center !important}
-.cards.world{grid-template-columns:repeat(2,1fr)}
+.cards.world{grid-template-columns:repeat(3,1fr)}
+  .cards.world img[style*='padding']{padding:10px !important}
   .detail-layout{flex-direction:column;gap:16px;align-items:center}
   .world-detail-overlay{position:relative;width:100%;padding:16px}
   .world-detail-wrap>img{margin-bottom:0}
@@ -232,11 +233,11 @@ a{color:inherit;text-decoration:none}
   <!-- DETAILS (hidden by default) -->
   <div class="detail" id="d-edmund">
     <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
+      <button class="detail-char-tab" data-dc="edmund" data-dct="edmund" onclick="switchChar('edmund')">에드먼드</button>
+      <button class="detail-char-tab" data-dc="george" data-dct="george" onclick="switchChar('george')">조지</button>
+      <button class="detail-char-tab" data-dc="samuel" data-dct="samuel" onclick="switchChar('samuel')">새뮤얼</button>
+      <button class="detail-char-tab" data-dc="joshua" data-dct="joshua" onclick="switchChar('joshua')">조슈아</button>
+      <button class="detail-char-tab" data-dc="sub" data-tsub="1" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -245,14 +246,13 @@ a{color:inherit;text-decoration:none}
         <span class="tag" data-tg="edmund">킹슬리 대공의 기사 · 백작가 장남</span>
         <h2 class="name" data-nm="edmund">에드먼드 루이스</h2>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v">190cm</span></div>
-        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v">흑발 · 보라색</span></div>
-        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v">건장하고 탄탄한 체격</span></div>
-        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v">6w5 sp/so</span></div>
-        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">충직 · 성실 · 헌신적</span></div>
-        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v">기사 의무의 실패</span></div>
-        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v">의로운 선택으로 약자를 지키는 것</span></div>
-        <p class="detail-quote" data-qt="edmund">긴장하면 검 자루를 움켜쥐고, 걱정되면 말없이 당신을 바라본다.</p>
+        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v" data-fv="edmund" data-fi="0">190cm</span></div>
+        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v" data-fv="edmund" data-fi="1">흑발 · 보라색</span></div>
+        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v" data-fv="edmund" data-fi="2">건장하고 탄탄한 체격</span></div>
+        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v" data-fv="edmund" data-fi="3">6w5 sp/so</span></div>
+        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v" data-fv="edmund" data-fi="4">충직 · 성실 · 헌신적</span></div>
+        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v" data-fv="edmund" data-fi="5">기사 의무의 실패</span></div>
+        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v" data-fv="edmund" data-fi="6">의로운 선택으로 약자를 지키는 것</span></div>
         <p class="detail-desc" data-ds="edmund">아멜리의 오빠. 황궁 연회에서 처음 당신을 만났다. 기사도에 대한 충성과 당신을 향한 보호 본능 사이에서 끊임없이 갈등한다.</p>
       </div>
     </div>
@@ -260,11 +260,11 @@ a{color:inherit;text-decoration:none}
 
   <div class="detail" id="d-george">
     <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
+      <button class="detail-char-tab" data-dc="edmund" data-dct="edmund" onclick="switchChar('edmund')">에드먼드</button>
+      <button class="detail-char-tab" data-dc="george" data-dct="george" onclick="switchChar('george')">조지</button>
+      <button class="detail-char-tab" data-dc="samuel" data-dct="samuel" onclick="switchChar('samuel')">새뮤얼</button>
+      <button class="detail-char-tab" data-dc="joshua" data-dct="joshua" onclick="switchChar('joshua')">조슈아</button>
+      <button class="detail-char-tab" data-dc="sub" data-tsub="1" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -273,14 +273,13 @@ a{color:inherit;text-decoration:none}
         <span class="tag" data-tg="george">킹슬리 공국 대공 · 황족</span>
         <h2 class="name" data-nm="george">조지 테베 킹슬리</h2>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v">180cm</span></div>
-        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v">금발 · 금안</span></div>
-        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v">무용수 같은 잔근육</span></div>
-        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v">3w4 sx/so</span></div>
-        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">우아 · 나르시시즘 · 여유</span></div>
-        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v">통제력의 상실</span></div>
-        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v">환경과 운명에 대한 절대적 통제</span></div>
-        <p class="detail-quote" data-qt="george">흥미가 생기면 고개를 기울이고, 짜증나면 더 차갑게 미소 짓는다.</p>
+        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v" data-fv="george" data-fi="0">180cm</span></div>
+        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v" data-fv="george" data-fi="1">금발 · 금안</span></div>
+        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v" data-fv="george" data-fi="2">무용수 같은 잔근육</span></div>
+        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v" data-fv="george" data-fi="3">3w4 sx/so</span></div>
+        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v" data-fv="george" data-fi="4">우아 · 나르시시즘 · 여유</span></div>
+        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v" data-fv="george" data-fi="5">통제력의 상실</span></div>
+        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v" data-fv="george" data-fi="6">환경과 운명에 대한 절대적 통제</span></div>
         <p class="detail-desc" data-ds="george">프레드릭 3세의 동생. 왕실 마법을 구사하며 반역을 도모 중. 당신을 도구로 이용하려 하지만 감정이 개입되면서 통제력을 잃어간다.</p>
       </div>
     </div>
@@ -288,11 +287,11 @@ a{color:inherit;text-decoration:none}
 
   <div class="detail" id="d-samuel">
     <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
+      <button class="detail-char-tab" data-dc="edmund" data-dct="edmund" onclick="switchChar('edmund')">에드먼드</button>
+      <button class="detail-char-tab" data-dc="george" data-dct="george" onclick="switchChar('george')">조지</button>
+      <button class="detail-char-tab" data-dc="samuel" data-dct="samuel" onclick="switchChar('samuel')">새뮤얼</button>
+      <button class="detail-char-tab" data-dc="joshua" data-dct="joshua" onclick="switchChar('joshua')">조슈아</button>
+      <button class="detail-char-tab" data-dc="sub" data-tsub="1" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -301,14 +300,13 @@ a{color:inherit;text-decoration:none}
         <span class="tag" data-tg="samuel">헌팅턴 공작</span>
         <h2 class="name" data-nm="samuel">새뮤얼 헌팅턴</h2>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v">175cm</span></div>
-        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v">갈발 · 갈색</span></div>
-        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v">마른 체형 (운동 안 함)</span></div>
-        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v">7w8 sp/sx</span></div>
-        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">탐욕 · 기회주의 · 빈정</span></div>
-        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v">지위와 권력의 상실</span></div>
-        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v">궁극적 성공 — 조지의 권력을 탐함</span></div>
-        <p class="detail-quote" data-qt="samuel">비웃을 때 입꼬리가 비뚤어지고, 불안하면 손가락을 두드린다.</p>
+        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v" data-fv="samuel" data-fi="0">175cm</span></div>
+        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v" data-fv="samuel" data-fi="1">갈발 · 갈색</span></div>
+        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v" data-fv="samuel" data-fi="2">마른 체형 (운동 안 함)</span></div>
+        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v" data-fv="samuel" data-fi="3">7w8 sp/sx</span></div>
+        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v" data-fv="samuel" data-fi="4">탐욕 · 기회주의 · 빈정</span></div>
+        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v" data-fv="samuel" data-fi="5">지위와 권력의 상실</span></div>
+        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v" data-fv="samuel" data-fi="6">궁극적 성공 — 조지의 권력을 탐함</span></div>
         <p class="detail-desc" data-ds="samuel">당신의 남편. 조슈아를 정부로 숨기고 있다. 조지의 친구이면서 그의 권력을 노린다. 당신을 도구이자 장식품으로 본다.</p>
       </div>
     </div>
@@ -316,11 +314,11 @@ a{color:inherit;text-decoration:none}
 
   <div class="detail" id="d-joshua">
     <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
+      <button class="detail-char-tab" data-dc="edmund" data-dct="edmund" onclick="switchChar('edmund')">에드먼드</button>
+      <button class="detail-char-tab" data-dc="george" data-dct="george" onclick="switchChar('george')">조지</button>
+      <button class="detail-char-tab" data-dc="samuel" data-dct="samuel" onclick="switchChar('samuel')">새뮤얼</button>
+      <button class="detail-char-tab" data-dc="joshua" data-dct="joshua" onclick="switchChar('joshua')">조슈아</button>
+      <button class="detail-char-tab" data-dc="sub" data-tsub="1" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -329,14 +327,13 @@ a{color:inherit;text-decoration:none}
         <span class="tag" data-tg="joshua">헌팅턴 공작의 정부</span>
         <h2 class="name" data-nm="joshua">조슈아</h2>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v">160cm</span></div>
-        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v">금발 · 금안</span></div>
-        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v">작은 체구</span></div>
-        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v">4w3 sx/sp</span></div>
-        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">유치 · 의존적 · 절박</span></div>
-        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v">버림받는 것</span></div>
-        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v">진정한 사랑과 안정</span></div>
-        <p class="detail-quote" data-qt="joshua">불안하면 손톱을 물어뜯고, 애원할 때 옷자락을 붙잡는다.</p>
+        <div class="file-row"><span class="file-k">HEIGHT</span><span class="file-v" data-fv="joshua" data-fi="0">160cm</span></div>
+        <div class="file-row"><span class="file-k">HAIR / EYES</span><span class="file-v" data-fv="joshua" data-fi="1">금발 · 금안</span></div>
+        <div class="file-row"><span class="file-k">BUILD</span><span class="file-v" data-fv="joshua" data-fi="2">작은 체구</span></div>
+        <div class="file-row"><span class="file-k">TYPE</span><span class="file-v" data-fv="joshua" data-fi="3">4w3 sx/sp</span></div>
+        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v" data-fv="joshua" data-fi="4">유치 · 의존적 · 절박</span></div>
+        <div class="file-row"><span class="file-k">FEAR</span><span class="file-v" data-fv="joshua" data-fi="5">버림받는 것</span></div>
+        <div class="file-row"><span class="file-k">DESIRE</span><span class="file-v" data-fv="joshua" data-fi="6">진정한 사랑과 안정</span></div>
         <p class="detail-desc" data-ds="joshua">출생 불명. 새뮤얼에게 의존하며 대저택에 고립되어 있다. 당신을 적대하면서도 생존을 위해 당신에게 매달린다.</p>
       </div>
     </div>
@@ -344,11 +341,11 @@ a{color:inherit;text-decoration:none}
 
   <div class="detail" id="d-sub">
     <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab on" data-dc="sub" onclick="switchChar('sub')">조연</button>
+      <button class="detail-char-tab" data-dc="edmund" data-dct="edmund" onclick="switchChar('edmund')">에드먼드</button>
+      <button class="detail-char-tab" data-dc="george" data-dct="george" onclick="switchChar('george')">조지</button>
+      <button class="detail-char-tab" data-dc="samuel" data-dct="samuel" onclick="switchChar('samuel')">새뮤얼</button>
+      <button class="detail-char-tab" data-dc="joshua" data-dct="joshua" onclick="switchChar('joshua')">조슈아</button>
+      <button class="detail-char-tab on" data-dc="sub" data-tsub="1" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="sub-scroll">
@@ -361,9 +358,9 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">AGE</span><span class="file-v">55세</span></div>
-        <div class="file-row"><span class="file-k">ROLE</span><span class="file-v">새뮤얼의 전직 유모</span></div>
-        <div class="file-row"><span class="file-k">STANCE</span><span class="file-v">조슈아 적대 / 당신에게 우호적</span></div>
+        <div class="file-row"><span class="file-k">AGE</span><span class="file-v" data-sfv="moore" data-sfi="0">55세</span></div>
+        <div class="file-row"><span class="file-k">ROLE</span><span class="file-v" data-sfv="moore" data-sfi="1">새뮤얼의 전직 유모</span></div>
+        <div class="file-row"><span class="file-k">STANCE</span><span class="file-v" data-sfv="moore" data-sfi="2">조슈아 적대 / 당신에게 우호적</span></div>
         <p class="detail-desc" data-ds="moore">당신이 공작부인으로서 권위를 되찾기를 바란다. 통제적이지만 당신에게는 정중하다.</p>
       </div>
       <div class="sub-entry" id="sub-ameli">
@@ -375,10 +372,10 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">AGE</span><span class="file-v">22세</span></div>
-        <div class="file-row"><span class="file-k">RELATION</span><span class="file-v">에드먼드의 여동생</span></div>
-        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">다정 · 치장을 좋아함</span></div>
-        <div class="file-row"><span class="file-k">STANCE</span><span class="file-v">당신에게 우호적</span></div>
+        <div class="file-row"><span class="file-k">AGE</span><span class="file-v" data-sfv="ameli" data-sfi="0">22세</span></div>
+        <div class="file-row"><span class="file-k">RELATION</span><span class="file-v" data-sfv="ameli" data-sfi="1">에드먼드의 여동생</span></div>
+        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v" data-sfv="ameli" data-sfi="2">다정 · 치장을 좋아함</span></div>
+        <div class="file-row"><span class="file-k">STANCE</span><span class="file-v" data-sfv="ameli" data-sfi="3">당신에게 우호적</span></div>
       </div>
       <div class="sub-entry" id="sub-amaryllis">
         <div class="sub-entry-header">
@@ -389,10 +386,10 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">AGE</span><span class="file-v">53세</span></div>
-        <div class="file-row"><span class="file-k">RELATION</span><span class="file-v">프레드릭 3세의 누나</span></div>
-        <div class="file-row"><span class="file-k">ALLIANCE</span><span class="file-v">조지와 동맹</span></div>
-        <div class="file-row"><span class="file-k">ASSET</span><span class="file-v">플로리치아 운하 소유 · 마법 사용</span></div>
+        <div class="file-row"><span class="file-k">AGE</span><span class="file-v" data-sfv="amaryllis" data-sfi="0">53세</span></div>
+        <div class="file-row"><span class="file-k">RELATION</span><span class="file-v" data-sfv="amaryllis" data-sfi="1">프레드릭 3세의 누나</span></div>
+        <div class="file-row"><span class="file-k">ALLIANCE</span><span class="file-v" data-sfv="amaryllis" data-sfi="2">조지와 동맹</span></div>
+        <div class="file-row"><span class="file-k">ASSET</span><span class="file-v" data-sfv="amaryllis" data-sfi="3">플로리치아 운하 소유 · 마법 사용</span></div>
       </div>
       <div class="sub-entry" id="sub-tang">
         <div class="sub-entry-header">
@@ -403,9 +400,9 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">AGE</span><span class="file-v">24세</span></div>
-        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">절세미인 · 빈정</span></div>
-        <div class="file-row"><span class="file-k">NOTE</span><span class="file-v">프레드릭 3세 외 복수의 연인</span></div>
+        <div class="file-row"><span class="file-k">AGE</span><span class="file-v" data-sfv="tang" data-sfi="0">24세</span></div>
+        <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v" data-sfv="tang" data-sfi="1">절세미인 · 빈정</span></div>
+        <div class="file-row"><span class="file-k">NOTE</span><span class="file-v" data-sfv="tang" data-sfi="2">프레드릭 3세 외 복수의 연인</span></div>
       </div>
       <div class="sub-entry" id="sub-puccini">
         <div class="sub-entry-header">
@@ -416,15 +413,13 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
         <div class="sep"></div>
-        <div class="file-row"><span class="file-k">AGE</span><span class="file-v">50세</span></div>
-        <div class="file-row"><span class="file-k">RELATION</span><span class="file-v">당신 생모의 오랜 친구</span></div>
-        <div class="file-row"><span class="file-k">NOTE</span><span class="file-v">당신의 출생 비밀을 알고 있음</span></div>
+        <div class="file-row"><span class="file-k">AGE</span><span class="file-v" data-sfv="puccini" data-sfi="0">50세</span></div>
+        <div class="file-row"><span class="file-k">RELATION</span><span class="file-v" data-sfv="puccini" data-sfi="1">당신 생모의 오랜 친구</span></div>
+        <div class="file-row"><span class="file-k">NOTE</span><span class="file-v" data-sfv="puccini" data-sfi="2">당신의 출생 비밀을 알고 있음</span></div>
         <p class="detail-desc" data-ds="puccini">깊은 신뢰를 얻어야만 비밀을 밝힌다.</p>
       </div>
     </div>
   </div>
-
-
 
   
 
@@ -445,12 +440,12 @@ a{color:inherit;text-decoration:none}
       <div class="sep"></div>
       <div class="magic-cols">
         <div class="magic-col">
-          <span class="file-k">마법 (테베)</span>
-          <p class="magic-desc">왕족 전용 · 빛 · 결계 · 파괴</p>
+          <span class="file-k" data-mk="0">마법 (테베)</span>
+          <p class="magic-desc" data-md="0">왕족 전용 · 빛 · 결계 · 파괴</p>
         </div>
         <div class="magic-col">
-          <span class="file-k">주술 (판델)</span>
-          <p class="magic-desc">비특권 · 영매 · 저주 · 계약</p>
+          <span class="file-k" data-mk="1">주술 (판델)</span>
+          <p class="magic-desc" data-md="1">비특권 · 영매 · 저주 · 계약</p>
         </div>
       </div>
       <p class="detail-desc" data-wd="magic">마법은 왕실 혈통만 사용할 수 있는 특권이다. 반면 주술은 혈통 또는 무작위 발현으로 누구나 얻을 수 있으며, 영혼과의 계약을 기반으로 한다.</p>
@@ -581,7 +576,6 @@ a{color:inherit;text-decoration:none}
 
   
 
-
   
 
 </div>
@@ -602,6 +596,9 @@ const T={
   ko:{
     nav_char:'인물',nav_world:'세계관',nav_play:'PLAY',
     sec_main:'MAIN',sec_sub:'SUB',sec_nations:'NATIONS',sec_locations:'LOCATIONS',sec_systems:'SYSTEMS',
+    tab_sub:'조연',
+    mk:['마법 (테베)','주술 (판델)'],
+    md:['왕족 전용 · 빛 · 결계 · 파괴','비특권 · 영매 · 저주 · 계약'],
     back_char:'← 등장인물',back_world:'← 세계관',
     play_text:'캐릭터챗으로 이야기를 시작합니다.',play_btn:'이야기 시작하기 →',
     bgm_sub:'BGM과 함께 감상하세요',
@@ -615,17 +612,29 @@ const T={
     tg_edmund:'킹슬리 대공의 기사 · 백작가 장남',tg_george:'킹슬리 공국 대공 · 황족',tg_samuel:'헌팅턴 공작',tg_joshua:'헌팅턴 공작의 정부',
     tg_moore:'헌팅턴 대공저 수석 하녀',tg_ameli:'백작가 영애',tg_amaryllis:'황족',tg_tang:'프레드릭 3세의 연인',tg_puccini:'디시마드 상단주',
     // Descriptions
+    fr_edmund:['190cm','흑발 · 보라색','건장하고 탄탄한 체격','6w5 sp/so','충직 · 성실 · 헌신적','기사 의무의 실패','의로운 선택으로 약자를 지키는 것'],
+    fr_george:['180cm','금발 · 금안','무용수 같은 잔근육','3w4 sx/so','우아 · 나르시시즘 · 여유','통제력의 상실','환경과 운명에 대한 절대적 통제'],
+    fr_samuel:['175cm','갈발 · 갈색','마른 체형 (운동 안 함)','7w8 sp/sx','탐욕 · 기회주의 · 빈정','지위와 권력의 상실','궁극적 성공 — 조지의 권력을 탐함'],
+    sfr_moore:['55세','새뮤얼의 전직 유모','조슈아 적대 / 당신에게 우호적'],
+    sfr_ameli:['22세','에드먼드의 여동생','다정 · 치장을 좋아함','당신에게 우호적'],
+    sfr_amaryllis:['53세','프레드릭 3세의 누나','조지와 동맹','플로리치아 운하 소유 · 마법 사용'],
+    sfr_tang:['24세','절세미인 · 빈정','프레드릭 3세 외 복수의 연인'],
+    sfr_puccini:['50세','당신 생모의 오랜 친구','당신의 출생 비밀을 알고 있음'],
+    fr_joshua:['160cm','금발 · 금안','작은 체구','4w3 sx/sp','유치 · 의존적 · 절박','버림받는 것','진정한 사랑과 안정'],
     ds_edmund:'아멜리의 오빠. 황궁 연회에서 처음 당신을 만났다. 기사도에 대한 충성과 당신을 향한 보호 본능 사이에서 끊임없이 갈등한다.',
+
     ds_george:'프레드릭 3세의 동생. 왕실 마법을 구사하며 반역을 도모 중. 당신을 도구로 이용하려 하지만 감정이 개입되면서 통제력을 잃어간다.',
+
     ds_samuel:'당신의 남편. 조슈아를 정부로 숨기고 있다. 조지의 친구이면서 그의 권력을 노린다. 당신을 도구이자 장식품으로 본다.',
+
     ds_joshua:'출생 불명. 새뮤얼에게 의존하며 대저택에 고립되어 있다. 당신을 적대하면서도 생존을 위해 당신에게 매달린다.',
     ds_moore:'당신이 공작부인으로서 권위를 되찾기를 바란다. 통제적이지만 당신에게는 정중하다.',
     ds_puccini:'깊은 신뢰를 얻어야만 비밀을 밝힌다.',
     // Quotes
-    qt_edmund:'긴장하면 검 자루를 움켜쥐고, 걱정되면 말없이 당신을 바라본다.',
-    qt_george:'흥미가 생기면 고개를 기울이고, 짜증나면 더 차갑게 미소 짓는다.',
-    qt_samuel:'비웃을 때 입꼬리가 비뚤어지고, 불안하면 손가락을 두드린다.',
-    qt_joshua:'불안하면 손톱을 물어뜯고, 애원할 때 옷자락을 붙잡는다.',
+    
+    
+    
+    
     // World
     wn_tebe:'테베 제국',wn_pandel:'판델 왕국',wn_kingsley:'킹슬리 공국',
     wn_palace:'테베 황궁',wn_huntington:'헌팅턴 대공저',wn_vander:'반데르 거리',wn_mane:'마네 거리',wn_canal:'플로리치아 운하',wn_magic:'마법과 주술',
@@ -641,6 +650,9 @@ const T={
   en:{
     nav_char:'Characters',nav_world:'World',nav_play:'PLAY',
     sec_main:'MAIN',sec_sub:'SUB',sec_nations:'NATIONS',sec_locations:'LOCATIONS',sec_systems:'SYSTEMS',
+    tab_sub:'Supporting',
+    mk:['Magic (Tebe)','Sorcery (Pandel)'],
+    md:['Royal exclusive · Light · Barrier · Destruction','Non-privileged · Medium · Hex · Contract'],
     back_char:'← Characters',back_world:'← World',
     play_text:'Start the story through character chat.',play_btn:'Start the Story →',
     bgm_sub:'Best enjoyed with BGM',
@@ -650,16 +662,25 @@ const T={
     dl_moore:'Mrs. Moore',dl_ameli:'Amelie',dl_amaryllis:'Amaryllis',dl_tang:'Tankville',dl_puccini:'Puccini',
     tg_edmund:'Knight of the Grand Duke · Eldest Son of Count Lewis',tg_george:'Grand Duke of Kingsley · Royalty',tg_samuel:'Duke of Huntington',tg_joshua:"The Duke's Mistress",
     tg_moore:'Head Maid of Huntington Estate',tg_ameli:"Count's Daughter",tg_amaryllis:'Royalty',tg_tang:"Frederick III's Lover",tg_puccini:'Head of Decimad Merchant Guild',
+    fr_edmund:['190cm','Black hair · Purple eyes','Sturdy, well-built','6w5 sp/so','Loyal · Diligent · Devoted','Failing his knightly duty','Protecting the weak through righteous choices'],
+    fr_george:['180cm','Blonde · Golden eyes','Lean dancer-like build','3w4 sx/so','Elegant · Narcissistic · Composed','Loss of total control','Absolute control over environment and fate'],
+    fr_samuel:['175cm','Brown hair · Brown eyes','Thin build (no exercise)','7w8 sp/sx','Greedy · Opportunistic · Sarcastic','Loss of status and power','Ultimate success — covets George\'s power'],
+    sfr_moore:['55','Former nanny of Samuel','Hostile to Joshua / Friendly to you'],
+    sfr_ameli:['22','Edmund\'s younger sister','Gentle · Loves dressing up','Friendly to you'],
+    sfr_amaryllis:['53','Frederick III\'s older sister','Allied with George','Owns Floricia Canal · Magic wielder'],
+    sfr_tang:['24','Stunning beauty · Sarcastic','Multiple lovers besides Frederick III'],
+    sfr_puccini:['50','Old friend of your biological mother','Knows the secret of your birth'],
+    fr_joshua:['160cm','Blonde · Golden eyes','Small frame','4w3 sx/sp','Childish · Dependent · Desperate','Being abandoned','True love and security'],
     ds_edmund:"Amelie's older brother. He first met you at the imperial ball. He constantly struggles between loyalty to chivalry and his protective instinct toward you.",
     ds_george:"Frederick III's brother. He wields royal magic and plots treason. He tries to use you as a pawn, but loses control as emotions intervene.",
     ds_samuel:"Your husband. He hides Joshua as his mistress. A friend of George, yet covets his power. He sees you as a tool and decoration.",
     ds_joshua:"Unknown parentage. Dependent on Samuel, isolated in the mansion. Hostile toward you, yet clings to you for survival.",
     ds_moore:'She hopes you will regain your authority as Duchess. Controlling, but courteous to you.',
     ds_puccini:'Will only reveal the secret once deep trust is earned.',
-    qt_edmund:'When tense, he grips his sword hilt. When worried, he watches you in silence.',
-    qt_george:'When intrigued, he tilts his head. When annoyed, his smile grows colder.',
-    qt_samuel:'When mocking, his lips twist. When anxious, he taps his fingers.',
-    qt_joshua:'When anxious, she bites her nails. When pleading, she clutches at clothes.',
+    
+    
+    
+    
     wn_tebe:'Tebe Empire',wn_pandel:'Pandel Kingdom',wn_kingsley:'Kingsley Duchy',
     wn_palace:'Imperial Palace',wn_huntington:'Huntington Estate',wn_vander:'Vander Street',wn_mane:'Mane Street',wn_canal:'Floricia Canal',wn_magic:'Magic & Sorcery',
     wd_tebe:'Illegitimate children are not recognized as official bloodline. Mistress culture is rampant regardless of gender or age, and the palace is a grand Versailles-like structure.',
@@ -674,6 +695,9 @@ const T={
   ja:{
     nav_char:'人物',nav_world:'世界観',nav_play:'PLAY',
     sec_main:'メイン',sec_sub:'サブ',sec_nations:'国家',sec_locations:'場所',sec_systems:'システム',
+    tab_sub:'サブ',
+    mk:['魔法（テベ）','呪術（パンデル）'],
+    md:['王族専用 · 光 · 結界 · 破壊','非特権 · 霊媒 · 呪い · 契約'],
     back_char:'← 人物',back_world:'← 世界観',
     play_text:'キャラクターチャットで物語を始めます。',play_btn:'物語を始める →',
     bgm_sub:'BGMと共にお楽しみください',
@@ -683,16 +707,25 @@ const T={
     dl_moore:'ムーア夫人',dl_ameli:'アメリ',dl_amaryllis:'アマリリス',dl_tang:'タンクヴィル',dl_puccini:'プッチーニ',
     tg_edmund:'キングスレー大公の騎士・伯爵家長男',tg_george:'キングスレー公国大公・皇族',tg_samuel:'ハンティントン公爵',tg_joshua:'公爵の愛人',
     tg_moore:'ハンティントン大公邸主席侍女',tg_ameli:'伯爵家令嬢',tg_amaryllis:'皇族',tg_tang:'フレデリック3世の恋人',tg_puccini:'デシマド商団長',
+    fr_edmund:['190cm','黒髪 · 紫の瞳','屈強で引き締まった体格','6w5 sp/so','忠実 · 勤勉 · 献身的','騎士の義務の失敗','正しい選択で弱者を守ること'],
+    fr_george:['180cm','金髪 · 金の瞳','舞踏家のような細い筋肉','3w4 sx/so','優雅 · ナルシシズム · 余裕','制御力の喪失','環境と運命に対する絶対的支配'],
+    fr_samuel:['175cm','茶髪 · 茶色の瞳','痩せ型（運動なし）','7w8 sp/sx','貪欲 · 日和見 · 皮肉','地位と権力の喪失','究極の成功 — ジョージの権力を渇望'],
+    sfr_moore:['55歳','サミュエルの元乳母','ジョシュアを敵視 / あなたに好意的'],
+    sfr_ameli:['22歳','エドマンドの妹','優しい · おしゃれ好き','あなたに好意的'],
+    sfr_amaryllis:['53歳','フレデリック3世の姉','ジョージと同盟','フロリチア運河所有 · 魔法使用'],
+    sfr_tang:['24歳','絶世の美女 · 皮肉屋','フレデリック3世以外にも複数の恋人'],
+    sfr_puccini:['50歳','あなたの実母の古い友人','あなたの出生の秘密を知っている'],
+    fr_joshua:['160cm','金髪 · 金の瞳','小柄な体格','4w3 sx/sp','幼稚 · 依存的 · 必死','見捨てられること','真実の愛と安定'],
     ds_edmund:'アメリの兄。皇宮の宴であなたと初めて出会った。騎士道への忠誠とあなたへの保護本能の間で絶え間なく葛藤する。',
     ds_george:'フレデリック3世の弟。王室魔法を操り反逆を企てる。あなたを駒として利用しようとするが、感情が介入し制御力を失っていく。',
     ds_samuel:'あなたの夫。ジョシュアを愛人として隠している。ジョージの友人でありながら、その権力を狙う。あなたを道具であり装飾品と見なす。',
     ds_joshua:'出生不明。サミュエルに依存し、大邸宅に孤立している。あなたを敵視しながらも、生存のためにあなたにすがる。',
     ds_moore:'あなたが公爵夫人としての権威を取り戻すことを望んでいる。支配的だが、あなたには丁重。',
     ds_puccini:'深い信頼を得て初めて秘密を明かす。',
-    qt_edmund:'緊張すると剣の柄を握りしめ、心配になると黙ってあなたを見つめる。',
-    qt_george:'興味が湧くと首を傾け、苛立つとより冷たく微笑む。',
-    qt_samuel:'嘲る時は口角が歪み、不安な時は指を叩く。',
-    qt_joshua:'不安になると爪を噛み、懇願する時は服の裾を掴む。',
+    
+    
+    
+    
     wn_tebe:'テベ帝国',wn_pandel:'パンデル王国',wn_kingsley:'キングスレー公国',
     wn_palace:'テベ皇宮',wn_huntington:'ハンティントン大公邸',wn_vander:'ヴァンダー通り',wn_mane:'マネ通り',wn_canal:'フロリチア運河',wn_magic:'魔法と呪術',
     wd_tebe:'庶子は正式な血統として認められない。愛人文化は性別・年齢を問わず蔓延しており、皇宮はヴェルサイユを彷彿とさせる巨大な建造物である。',
@@ -753,6 +786,48 @@ function applyLang(lang){
     const key=el.dataset.bk;
     if(t[key])el.textContent=t[key];
   });
+  // File row translations - main chars
+  ['edmund','george','samuel','joshua'].forEach(cid=>{
+    const key='fr_'+cid;
+    if(t[key]){
+      document.querySelectorAll('[data-fv="'+cid+'"]').forEach(el=>{
+        const i=parseInt(el.dataset.fi);
+        if(t[key][i])el.textContent=t[key][i];
+      });
+    }
+  });
+  // File row translations - sub chars
+  ['moore','ameli','amaryllis','tang','puccini'].forEach(cid=>{
+    const key='sfr_'+cid;
+    if(t[key]){
+      document.querySelectorAll('[data-sfv="'+cid+'"]').forEach(el=>{
+        const i=parseInt(el.dataset.sfi);
+        if(t[key][i])el.textContent=t[key][i];
+      });
+    }
+  });
+  // Tab label "조연/Supporting/サブ"
+  if(t.tab_sub){
+    document.querySelectorAll('[data-tsub]').forEach(el=>{el.textContent=t.tab_sub});
+  }
+  // Magic section
+  if(t.mk){
+    document.querySelectorAll('[data-mk]').forEach(el=>{
+      const i=parseInt(el.dataset.mk);
+      if(t.mk[i])el.textContent=t.mk[i];
+    });
+  }
+  if(t.md){
+    document.querySelectorAll('[data-md]').forEach(el=>{
+      const i=parseInt(el.dataset.md);
+      if(t.md[i])el.textContent=t.md[i];
+    });
+  }
+  // Detail char tab names
+  document.querySelectorAll('[data-dct]').forEach(el=>{
+    const key='dl_'+el.dataset.dct;
+    if(t[key])el.textContent=t[key];
+  });
   // Play
   const playP=document.querySelector('#p-play p');
   if(playP)playP.textContent=t.play_text;
@@ -772,27 +847,27 @@ function toggleM(){
   if(playing){bgm.pause();playing=false;mBtn.classList.remove('on');mIco.textContent='▶'}
   else{bgm.play().then(()=>{playing=true;mBtn.classList.add('on');mIco.textContent='⏸'}).catch(()=>{})}
 }
-function tab(id){
+function tab(id,push=true){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
   document.querySelectorAll('.header-nav button').forEach(b=>b.classList.remove('on'));
   const p=document.getElementById('p-'+id);
   if(p)p.classList.add('show');
   const map={char:0,world:1,play:2};
   document.querySelectorAll('.header-nav button')[map[id]].classList.add('on');
-  // Reset to grid view
-  if(id==='char') closeChar();
-  if(id==='world') closeWorld();
+  if(id==='char') closeChar(false);
+  if(id==='world') closeWorld(false);
+  if(push) try{history.pushState({view:id},'','#'+id)}catch(e){};
   window.scrollTo(0,0);
 }
-function openChar(id){
+function openChar(id,push=true){
   document.getElementById('charGrid').style.display='none';
   document.querySelectorAll('#p-char .detail').forEach(d=>d.classList.remove('show'));
   const d=document.getElementById('d-'+id);
   if(d)d.classList.add('show');
-  // Highlight active tab in ALL detail char tab bars
   document.querySelectorAll('.detail-char-tab').forEach(t=>{
     t.classList.toggle('on',t.dataset.dc===id);
   });
+  if(push) try{history.pushState({view:'char',detail:id},'','#char/'+id)}catch(e){};
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function switchChar(id){
@@ -802,26 +877,41 @@ function switchChar(id){
   document.querySelectorAll('.detail-char-tab').forEach(t=>{
     t.classList.toggle('on',t.dataset.dc===id);
   });
+  try{history.pushState({view:'char',detail:id},'','#char/'+id)}catch(e){};
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function closeChar(){
+function closeChar(push=true){
   document.querySelectorAll('#p-char .detail').forEach(d=>d.classList.remove('show'));
   document.getElementById('charGrid').style.display='block';
+  if(push) try{history.pushState({view:'char'},'','#char')}catch(e){};
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function openWorld(id){
+function openWorld(id,push=true){
   document.getElementById('worldGrid').style.display='none';
   document.querySelectorAll('#p-world .detail').forEach(d=>d.classList.remove('show'));
   const d=document.getElementById('d-'+id);
   if(d)d.classList.add('show');
+  if(push) try{history.pushState({view:'world',detail:id},'','#world/'+id)}catch(e){};
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function closeWorld(){
+function closeWorld(push=true){
   document.querySelectorAll('#p-world .detail').forEach(d=>d.classList.remove('show'));
   document.getElementById('worldGrid').style.display='block';
+  if(push) try{history.pushState({view:'world'},'','#world')}catch(e){};
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+window.addEventListener('popstate',function(e){
+  const s=e.state;
+  if(!s){tab('char',false);return;}
+  if(s.detail){
+    if(s.view==='char'){tab('char',false);openChar(s.detail,false);}
+    else if(s.view==='world'){tab('world',false);openWorld(s.detail,false);}
+  }else{
+    tab(s.view||'char',false);
+  }
+});
 </script>
 </body>
 </html>
