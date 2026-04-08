@@ -27,7 +27,7 @@ a{color:inherit;text-decoration:none}
 .intro-title img{width:100%;display:block}
 .intro-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:14px 44px;font:17px/1 'Cormorant Garamond',serif;letter-spacing:3px;cursor:pointer;transition:.3s}
 .intro-btn:hover{border-color:var(--red);color:var(--gold)}
-.lang-select{display:flex;align-items:center;gap:16px}
+.lang-select{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
 .lang-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:12px 28px;font:16px/1 'Cormorant Garamond',serif;letter-spacing:2px;cursor:pointer;transition:.3s}
 .lang-btn:hover{border-color:var(--red);color:var(--gold)}
 .lang-divider{color:var(--bdr3);font:16px 'Cormorant Garamond',serif}
@@ -35,6 +35,7 @@ a{color:inherit;text-decoration:none}
 
 /* TOP BAR */
 .header{position:sticky;top:0;z-index:50;background:var(--bg)}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
 .header-title{display:flex;justify-content:center;padding:32px 16px 20px;background:radial-gradient(ellipse at center bottom,var(--glow),transparent 70%)}
 .header-title img{height:clamp(82px,16vw,182px);width:auto;display:block}
 .header-nav{display:flex;justify-content:center;gap:4px;padding:4px 0;border-top:1px solid var(--bdr1);border-bottom:1px solid var(--bdr1)}
@@ -44,7 +45,7 @@ a{color:inherit;text-decoration:none}
 .header-nav button.on::after{content:'';position:absolute;bottom:-1px;left:15%;right:15%;height:2px;background:var(--red)}
 
 /* MUSIC */
-.music{position:fixed;bottom:20px;left:20px;z-index:60;display:flex;align-items:center;gap:10px;background:rgba(7,3,4,.9);border:1px solid var(--bdr2);padding:10px 16px 10px 12px;backdrop-filter:blur(8px)}
+.music{position:fixed;bottom:20px;right:20px;z-index:60;display:flex;align-items:center;gap:10px;background:rgba(7,3,4,.9);border:1px solid var(--bdr2);padding:10px 16px 10px 12px;backdrop-filter:blur(8px)}
 .music button{width:34px;height:34px;border-radius:50%;background:transparent;border:1px solid var(--bdr3);color:var(--gold-d);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s;flex-shrink:0}
 .music button:hover{border-color:var(--red);color:var(--gold)}
 .music button.on{border-color:var(--red-g)}
@@ -63,9 +64,9 @@ a{color:inherit;text-decoration:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 /* CARD GRID */
-.diamond-row{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;padding:24px 0 76px}
+.diamond-row{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;padding:24px 0 100px}
 .diamond-row.main{margin-bottom:-30px}
-.diamond-row.sub{margin-top:14px;padding-bottom:68px}
+.diamond-row.sub{margin-top:14px;padding-bottom:90px}
 .diamond{position:relative;cursor:pointer;flex-shrink:0;transition:transform .4s;background:transparent}
 .diamond:hover{transform:scale(1.08);z-index:10}
 .diamond.gold{width:clamp(120px,18vw,180px);height:clamp(120px,18vw,180px);margin:0 -6px}
@@ -81,8 +82,8 @@ a{color:inherit;text-decoration:none}
 .diamond-label{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);white-space:nowrap;font:15px/1 'Noto Serif KR',serif;color:var(--gold);letter-spacing:1px;opacity:0;transition:opacity .3s;z-index:5;text-shadow:0 0 8px var(--bg)}
 .diamond.silver .diamond-label{font-size:13px;color:#9a9aaa;bottom:-22px}
 .diamond:hover .diamond-label{opacity:1}
-.diamond-name{position:absolute;bottom:-56px;left:50%;transform:translateX(-50%);white-space:nowrap;font:17px/1 'Noto Serif KR',serif;font-weight:500;color:var(--gold-d);letter-spacing:1px;text-shadow:0 2px 8px var(--bg),0 0 12px var(--bg);z-index:10}
-.diamond.silver .diamond-name{font-size:16px;font-weight:500;color:#9a9aaa;bottom:-50px;z-index:10}
+.diamond-name{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);white-space:nowrap;font:17px/1 'Noto Serif KR',serif;font-weight:500;color:var(--gold-d);letter-spacing:1px;text-shadow:0 2px 8px var(--bg),0 0 12px var(--bg);z-index:10}
+.diamond.silver .diamond-name{font-size:16px;font-weight:500;color:#9a9aaa;bottom:-70px;z-index:10}
 .loc-top{grid-template-columns:repeat(2,minmax(200px,280px)) !important;justify-content:center !important}
 .loc-bottom{grid-template-columns:repeat(3,minmax(180px,250px)) !important;justify-content:center !important}
 .cards.world{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:960px;margin:0 auto;justify-content:center;justify-items:center}
@@ -103,12 +104,31 @@ a{color:inherit;text-decoration:none}
 .detail-char-tab:hover{color:var(--body)}
 .detail-char-tab.on{color:var(--gold)}
 .detail-char-tab.on::after{content:'';position:absolute;bottom:-1px;left:10%;right:10%;height:2px;background:var(--red)}
+.sub-scroll{max-height:60vh;overflow-y:auto;display:flex;flex-direction:column;gap:28px;padding:8px 0 20px}
+.sub-scroll::-webkit-scrollbar{width:3px}
+.sub-scroll::-webkit-scrollbar-track{background:transparent}
+.sub-scroll::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:2px}
+.sub-entry{padding-bottom:24px;border-bottom:1px solid var(--bdr1)}
+.sub-entry:last-child{border-bottom:none}
+.sub-entry-header{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.sub-entry-img{width:80px;height:80px;object-fit:cover;border:1px solid var(--bdr2);flex-shrink:0}
+.magic-top{max-width:960px;margin:0 auto 28px;padding:20px 0 24px;border-bottom:1px solid var(--bdr1)}
+.magic-title{font:20px/1 'Noto Serif KR',serif;color:var(--gold);font-weight:400;letter-spacing:2px;margin-bottom:8px}
+.magic-cols{display:flex;gap:32px;margin:12px 0}
+.magic-col{flex:1}
+.magic-col .file-k{display:block;margin-bottom:4px}
+.magic-desc{font:15px/1.6 'Noto Serif KR',serif;color:var(--body)}
 .detail{display:none;animation:fadeUp .35s ease}
 .detail.show{display:block}
 .detail-back{background:none;border:none;color:var(--dark);font:16px 'Cormorant Garamond',serif;cursor:pointer;letter-spacing:1px;padding:0 0 16px;transition:.3s}
 .detail-back:hover{color:var(--gold-d)}
-.detail-layout{display:flex;gap:32px;align-items:flex-start}
-.detail-img{flex-shrink:0;background:transparent}
+.detail-layout{display:flex;gap:32px;align-items:flex-start;justify-content:center}
+.world-detail-wrap{position:relative;width:100%}
+.world-detail-wrap>img{width:100%;display:block}
+.world-detail-overlay{position:absolute;right:0;top:0;bottom:0;width:50%;background:rgba(7,3,4,.82);padding:24px;display:flex;flex-direction:column;justify-content:center;overflow-y:auto;backdrop-filter:blur(4px)}
+.world-detail-wrap .emblem-wrap{display:flex;justify-content:center;padding:32px;background:transparent}
+.world-detail-wrap .emblem-wrap img{max-height:200px;width:auto}
+.detail-img{flex-shrink:0;background:transparent;display:flex;justify-content:center}
 .detail-img img{display:block;max-height:70vh;width:auto;max-width:100%}
 .detail-img.emblem img{max-height:200px}
 .detail-info{flex:1;min-width:0}
@@ -138,9 +158,12 @@ a{color:inherit;text-decoration:none}
   .loc-top{grid-template-columns:repeat(2,minmax(200px,280px)) !important;justify-content:center !important}
 .loc-bottom{grid-template-columns:repeat(3,minmax(180px,250px)) !important;justify-content:center !important}
 .cards.world{grid-template-columns:repeat(2,1fr)}
-  .detail-layout{flex-direction:column;gap:16px}
+  .detail-layout{flex-direction:column;gap:16px;align-items:center}
+  .world-detail-overlay{position:relative;width:100%;padding:16px}
+  .world-detail-wrap>img{margin-bottom:0}
   .detail-img img{max-height:40vh;width:100%;object-fit:contain}
-  .music{bottom:12px;left:12px}
+  .lang-btn{padding:10px 22px;font-size:14px}
+  .music{bottom:12px;right:12px}
 }
 @media(max-width:400px){
   .cards.sub{grid-template-columns:repeat(2,1fr)}
@@ -165,13 +188,13 @@ a{color:inherit;text-decoration:none}
 
 <!-- TOP BAR -->
 <div class="header" id="header" style="display:none">
-  <div class="header-title"><img src="asset/title.webp" alt="맞바람을 핀다는 건"></div>
+  <div class="header-inner"><div class="header-title"><img src="asset/title.webp" alt="맞바람을 핀다는 건"></div>
   <nav class="header-nav">
     <button class="on" onclick="tab('char')">인물</button>
     <button onclick="tab('world')">세계관</button>
     <button onclick="tab('play')">PLAY</button>
   </nav>
-</div>
+</div></div>
 
 <!-- MUSIC -->
 <div class="music" id="musicWrap" style="display:none">
@@ -198,11 +221,11 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="section-label" data-t="sec_sub">SUB</div>
     <div class="diamond-row sub">
-      <div class="diamond silver" onclick="openChar('moore')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/moore.webp" alt=""></div><span class="diamond-name" data-dn="moore">무어 부인</span></div>
-      <div class="diamond silver" onclick="openChar('ameli')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/ameli.webp" alt=""></div><span class="diamond-name" data-dn="ameli">아멜리</span></div>
-      <div class="diamond silver" onclick="openChar('amaryllis')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/amaryllis.webp" alt=""></div><span class="diamond-name" data-dn="amaryllis">아마릴리스</span></div>
-      <div class="diamond silver" onclick="openChar('tang')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/tang.webp" alt=""></div><span class="diamond-name" data-dn="tang">탕크빌</span></div>
-      <div class="diamond silver" onclick="openChar('puccini')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/puccini.webp" alt=""></div><span class="diamond-name" data-dn="puccini">푸치니</span></div>
+      <div class="diamond silver" onclick="openChar('sub')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/moore.webp" alt=""></div><span class="diamond-name" data-dn="moore">무어 부인</span></div>
+      <div class="diamond silver" onclick="openChar('sub')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/ameli.webp" alt=""></div><span class="diamond-name" data-dn="ameli">아멜리</span></div>
+      <div class="diamond silver" onclick="openChar('sub')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/amaryllis.webp" alt=""></div><span class="diamond-name" data-dn="amaryllis">아마릴리스</span></div>
+      <div class="diamond silver" onclick="openChar('sub')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/tang.webp" alt=""></div><span class="diamond-name" data-dn="tang">탕크빌</span></div>
+      <div class="diamond silver" onclick="openChar('sub')"><div class="diamond-inner"><img class="diamond-img" src="asset/char/banner/puccini.webp" alt=""></div><span class="diamond-name" data-dn="puccini">푸치니</span></div>
     </div>
   </div>
 
@@ -213,11 +236,7 @@ a{color:inherit;text-decoration:none}
       <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
       <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
       <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
+      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -245,11 +264,7 @@ a{color:inherit;text-decoration:none}
       <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
       <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
       <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
+      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -277,11 +292,7 @@ a{color:inherit;text-decoration:none}
       <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
       <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
       <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
+      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -309,11 +320,7 @@ a{color:inherit;text-decoration:none}
       <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
       <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
       <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
+      <button class="detail-char-tab" data-dc="sub" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
     <div class="detail-layout">
@@ -335,122 +342,80 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 
-  <div class="detail" id="d-moore">
+  <div class="detail" id="d-sub">
     <div class="detail-char-tabs" id="dCharTabs">
       <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
       <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
       <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
       <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
+      <button class="detail-char-tab on" data-dc="sub" onclick="switchChar('sub')">조연</button>
     </div>
     <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
-    <div class="detail-layout">
-      <div class="detail-img"><img src="asset/char/banner/moore.webp" alt="무어 부인" style="max-height:300px"></div>
-      <div class="detail-info">
-        <span class="tag" data-tg="moore">헌팅턴 대공저 수석 하녀</span><h2 class="name" data-nm="moore">무어 부인</h2><div class="sep"></div>
+    <div class="sub-scroll">
+      <div class="sub-entry" id="sub-moore">
+        <div class="sub-entry-header">
+          <img src="asset/char/banner/moore.webp" alt="moore" class="sub-entry-img">
+          <div>
+            <span class="tag" data-tg="moore">헌팅턴 대공저 수석 하녀</span>
+            <h2 class="name" data-nm="moore">무어 부인</h2>
+          </div>
+        </div>
+        <div class="sep"></div>
         <div class="file-row"><span class="file-k">AGE</span><span class="file-v">55세</span></div>
         <div class="file-row"><span class="file-k">ROLE</span><span class="file-v">새뮤얼의 전직 유모</span></div>
         <div class="file-row"><span class="file-k">STANCE</span><span class="file-v">조슈아 적대 / 당신에게 우호적</span></div>
         <p class="detail-desc" data-ds="moore">당신이 공작부인으로서 권위를 되찾기를 바란다. 통제적이지만 당신에게는 정중하다.</p>
       </div>
-    </div>
-  </div>
-
-  <div class="detail" id="d-ameli">
-    <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
-    </div>
-    <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
-    <div class="detail-layout">
-      <div class="detail-img"><img src="asset/char/banner/ameli.webp" alt="아멜리" style="max-height:300px"></div>
-      <div class="detail-info">
-        <span class="tag" data-tg="ameli">백작가 영애</span><h2 class="name" data-nm="ameli">아멜리 루이스</h2><div class="sep"></div>
+      <div class="sub-entry" id="sub-ameli">
+        <div class="sub-entry-header">
+          <img src="asset/char/banner/ameli.webp" alt="ameli" class="sub-entry-img">
+          <div>
+            <span class="tag" data-tg="ameli">백작가 영애</span>
+            <h2 class="name" data-nm="ameli">아멜리 루이스</h2>
+          </div>
+        </div>
+        <div class="sep"></div>
         <div class="file-row"><span class="file-k">AGE</span><span class="file-v">22세</span></div>
         <div class="file-row"><span class="file-k">RELATION</span><span class="file-v">에드먼드의 여동생</span></div>
         <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">다정 · 치장을 좋아함</span></div>
         <div class="file-row"><span class="file-k">STANCE</span><span class="file-v">당신에게 우호적</span></div>
       </div>
-    </div>
-  </div>
-
-  <div class="detail" id="d-amaryllis">
-    <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
-    </div>
-    <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
-    <div class="detail-layout">
-      <div class="detail-img"><img src="asset/char/banner/amaryllis.webp" alt="아마릴리스" style="max-height:300px"></div>
-      <div class="detail-info">
-        <span class="tag" data-tg="amaryllis">황족</span><h2 class="name" data-nm="amaryllis">아마릴리스 공주</h2><div class="sep"></div>
+      <div class="sub-entry" id="sub-amaryllis">
+        <div class="sub-entry-header">
+          <img src="asset/char/banner/amaryllis.webp" alt="amaryllis" class="sub-entry-img">
+          <div>
+            <span class="tag" data-tg="amaryllis">황족</span>
+            <h2 class="name" data-nm="amaryllis">아마릴리스 공주</h2>
+          </div>
+        </div>
+        <div class="sep"></div>
         <div class="file-row"><span class="file-k">AGE</span><span class="file-v">53세</span></div>
         <div class="file-row"><span class="file-k">RELATION</span><span class="file-v">프레드릭 3세의 누나</span></div>
         <div class="file-row"><span class="file-k">ALLIANCE</span><span class="file-v">조지와 동맹</span></div>
         <div class="file-row"><span class="file-k">ASSET</span><span class="file-v">플로리치아 운하 소유 · 마법 사용</span></div>
       </div>
-    </div>
-  </div>
-
-  <div class="detail" id="d-tang">
-    <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
-    </div>
-    <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
-    <div class="detail-layout">
-      <div class="detail-img"><img src="asset/char/banner/tang.webp" alt="탕크빌" style="max-height:300px"></div>
-      <div class="detail-info">
-        <span class="tag" data-tg="tang">프레드릭 3세의 연인</span><h2 class="name" data-nm="tang">탕크빌 영애</h2><div class="sep"></div>
+      <div class="sub-entry" id="sub-tang">
+        <div class="sub-entry-header">
+          <img src="asset/char/banner/tang.webp" alt="tang" class="sub-entry-img">
+          <div>
+            <span class="tag" data-tg="tang">프레드릭 3세의 연인</span>
+            <h2 class="name" data-nm="tang">탕크빌 영애</h2>
+          </div>
+        </div>
+        <div class="sep"></div>
         <div class="file-row"><span class="file-k">AGE</span><span class="file-v">24세</span></div>
         <div class="file-row"><span class="file-k">TRAIT</span><span class="file-v">절세미인 · 빈정</span></div>
         <div class="file-row"><span class="file-k">NOTE</span><span class="file-v">프레드릭 3세 외 복수의 연인</span></div>
       </div>
-    </div>
-  </div>
-
-  <div class="detail" id="d-puccini">
-    <div class="detail-char-tabs" id="dCharTabs">
-      <button class="detail-char-tab" data-dc="edmund" onclick="switchChar('edmund')">에드먼드</button>
-      <button class="detail-char-tab" data-dc="george" onclick="switchChar('george')">조지</button>
-      <button class="detail-char-tab" data-dc="samuel" onclick="switchChar('samuel')">새뮤얼</button>
-      <button class="detail-char-tab" data-dc="joshua" onclick="switchChar('joshua')">조슈아</button>
-      <button class="detail-char-tab" data-dc="moore" onclick="switchChar('moore')">무어 부인</button>
-      <button class="detail-char-tab" data-dc="ameli" onclick="switchChar('ameli')">아멜리</button>
-      <button class="detail-char-tab" data-dc="amaryllis" onclick="switchChar('amaryllis')">아마릴리스</button>
-      <button class="detail-char-tab" data-dc="tang" onclick="switchChar('tang')">탕크빌</button>
-      <button class="detail-char-tab" data-dc="puccini" onclick="switchChar('puccini')">푸치니</button>
-    </div>
-    <button class="detail-back" onclick="closeChar()" data-bk="back_char">← 등장인물</button>
-    <div class="detail-layout">
-      <div class="detail-img"><img src="asset/char/banner/puccini.webp" alt="푸치니" style="max-height:300px"></div>
-      <div class="detail-info">
-        <span class="tag" data-tg="puccini">디시마드 상단주</span><h2 class="name" data-nm="puccini">푸치니</h2><div class="sep"></div>
+      <div class="sub-entry" id="sub-puccini">
+        <div class="sub-entry-header">
+          <img src="asset/char/banner/puccini.webp" alt="puccini" class="sub-entry-img">
+          <div>
+            <span class="tag" data-tg="puccini">디시마드 상단주</span>
+            <h2 class="name" data-nm="puccini">푸치니</h2>
+          </div>
+        </div>
+        <div class="sep"></div>
         <div class="file-row"><span class="file-k">AGE</span><span class="file-v">50세</span></div>
         <div class="file-row"><span class="file-k">RELATION</span><span class="file-v">당신 생모의 오랜 친구</span></div>
         <div class="file-row"><span class="file-k">NOTE</span><span class="file-v">당신의 출생 비밀을 알고 있음</span></div>
@@ -458,11 +423,39 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
   </div>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
 </div>
 
 <!-- 세계관 PAGE -->
 <div class="page" id="p-world">
   <div id="worldGrid">
+    <div class="magic-top">
+      <h3 class="magic-title" data-wn="magic">마법과 주술</h3>
+      <div class="sep"></div>
+      <div class="magic-cols">
+        <div class="magic-col">
+          <span class="file-k">마법 (테베)</span>
+          <p class="magic-desc">왕족 전용 · 빛 · 결계 · 파괴</p>
+        </div>
+        <div class="magic-col">
+          <span class="file-k">주술 (판델)</span>
+          <p class="magic-desc">비특권 · 영매 · 저주 · 계약</p>
+        </div>
+      </div>
+      <p class="detail-desc" data-wd="magic">마법은 왕실 혈통만 사용할 수 있는 특권이다. 반면 주술은 혈통 또는 무작위 발현으로 누구나 얻을 수 있으며, 영혼과의 계약을 기반으로 한다.</p>
+    </div>
+    
     <div class="section-label" data-t="sec_nations">NATIONS</div>
     <div class="cards world">
       <div class="card" onclick="openWorld('tebe')"><img src="asset/world/tebe.webp" alt="" style="padding:20px"><div class="label" data-wn="tebe">테베 제국</div></div>
@@ -479,11 +472,7 @@ a{color:inherit;text-decoration:none}
       <div class="card" onclick="openWorld('mane')"><img src="asset/world/mane.webp" alt=""><div class="label" data-wn="mane">마네 거리</div></div>
       <div class="card" onclick="openWorld('canal')"><img src="asset/world/canal.webp" alt=""><div class="label" data-wn="canal">플로리치아 운하</div></div>
     </div>
-    <div class="section-label" data-t="sec_systems">SYSTEMS</div>
-    <div class="cards world">
-      <div class="card" onclick="openWorld('magic')" style="background:transparent;border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:center;aspect-ratio:16/9"><div class="label" style="position:relative;background:none;text-align:center" data-wn="magic">마법과 주술</div></div>
-      <div class="card" onclick="openWorld('economy')" style="background:transparent;border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:center;aspect-ratio:16/9"><div class="label" style="position:relative;background:none;text-align:center" data-wn="economy">경제</div></div>
-    </div>
+
   </div>
 
   <div class="detail" id="d-tebe">
@@ -519,56 +508,82 @@ a{color:inherit;text-decoration:none}
 
   <div class="detail" id="d-palace">
     <button class="detail-back" onclick="closeWorld()" data-bk="back_world">← 세계관</button>
-    <div class="detail-layout"><div class="detail-img"><img src="asset/world/palace.webp" alt="테베 황궁"></div>
-      <div class="detail-info"><span class="tag">LOCATION</span><h2 class="name" data-wn="palace">테베 황궁</h2><div class="sep"></div>
+    <div class="world-detail-wrap">
+      <img src="asset/world/palace.webp" alt="palace">
+      <div class="world-detail-overlay">
+        <span class="tag">LOCATION</span>
+        <h2 class="name" data-wn="palace">테베 황궁</h2>
+        <div class="sep"></div>
+        
         <p class="detail-desc" data-wd="palace">수도 중심부의 왕실 거처. 베르사유를 연상시키는 거대한 구조물로, 황궁 연회장은 아마릴리스 공주가 주관하며 장대하고 위엄 있는 공간이다.</p>
-      </div></div></div>
+      </div>
+    </div>
+  </div>
 
   <div class="detail" id="d-huntington">
     <button class="detail-back" onclick="closeWorld()" data-bk="back_world">← 세계관</button>
-    <div class="detail-layout"><div class="detail-img"><img src="asset/world/huntington.webp" alt="헌팅턴 대공저"></div>
-      <div class="detail-info"><span class="tag">LOCATION</span><h2 class="name" data-wn="huntington">헌팅턴 대공저</h2><div class="sep"></div>
+    <div class="world-detail-wrap">
+      <img src="asset/world/huntington.webp" alt="huntington">
+      <div class="world-detail-overlay">
+        <span class="tag">LOCATION</span>
+        <h2 class="name" data-wn="huntington">헌팅턴 대공저</h2>
+        <div class="sep"></div>
+        
         <p class="detail-desc" data-wd="huntington">당신과 새뮤얼, 조슈아가 함께 거주하는 공작 저택.</p>
-      </div></div></div>
+      </div>
+    </div>
+  </div>
 
   <div class="detail" id="d-vander">
     <button class="detail-back" onclick="closeWorld()" data-bk="back_world">← 세계관</button>
-    <div class="detail-layout"><div class="detail-img"><img src="asset/world/vander.webp" alt="반데르 거리"></div>
-      <div class="detail-info"><span class="tag">LOCATION</span><h2 class="name" data-wn="vander">반데르 거리</h2><div class="sep"></div>
+    <div class="world-detail-wrap">
+      <img src="asset/world/vander.webp" alt="vander">
+      <div class="world-detail-overlay">
+        <span class="tag">LOCATION</span>
+        <h2 class="name" data-wn="vander">반데르 거리</h2>
+        <div class="sep"></div>
+        
         <p class="detail-desc" data-wd="vander">부르주아와 귀족 전용 구역. 엄격한 신분 확인과 높은 보안이 유지된다. 최고급 보석상 로젤라, 고급 식당 라피네, 프리미엄 찻집 살롱 드 플로라, 최상급 주류 골든 오크가 자리잡고 있다.</p>
-      </div></div></div>
+      </div>
+    </div>
+  </div>
 
   <div class="detail" id="d-mane">
     <button class="detail-back" onclick="closeWorld()" data-bk="back_world">← 세계관</button>
-    <div class="detail-layout"><div class="detail-img"><img src="asset/world/mane.webp" alt="마네 거리"></div>
-      <div class="detail-info"><span class="tag">LOCATION</span><h2 class="name" data-wn="mane">마네 거리</h2><div class="sep"></div>
+    <div class="world-detail-wrap">
+      <img src="asset/world/mane.webp" alt="mane">
+      <div class="world-detail-overlay">
+        <span class="tag">LOCATION</span>
+        <h2 class="name" data-wn="mane">마네 거리</h2>
+        <div class="sep"></div>
+        
         <p class="detail-desc" data-wd="mane">수도 최악의 빈민가. 차별의 낙인이 찍힌 곳.</p>
-      </div></div></div>
+      </div>
+    </div>
+  </div>
 
   <div class="detail" id="d-canal">
     <button class="detail-back" onclick="closeWorld()" data-bk="back_world">← 세계관</button>
-    <div class="detail-layout"><div class="detail-img"><img src="asset/world/canal.webp" alt="플로리치아 운하"></div>
-      <div class="detail-info"><span class="tag">LOCATION</span><h2 class="name" data-wn="canal">플로리치아 운하</h2><div class="sep"></div>
+    <div class="world-detail-wrap">
+      <img src="asset/world/canal.webp" alt="canal">
+      <div class="world-detail-overlay">
+        <span class="tag">LOCATION</span>
+        <h2 class="name" data-wn="canal">플로리치아 운하</h2>
+        <div class="sep"></div>
         <div class="file-row"><span class="file-k">OWNER</span><span class="file-v">아마릴리스 공주</span></div>
         <div class="file-row"><span class="file-k">FUNCTION</span><span class="file-v">수도 관통 운하 · 사업 거점</span></div>
         <p class="detail-desc" data-wd="canal">운하 사업 해금을 위해서는 아마릴리스 공주의 설득이 필요하다. 디시마드 상단과의 협업으로 해운업 진출이 가능하다.</p>
-      </div></div></div>
+      </div>
+    </div>
+  </div>
 
-  <div class="detail" id="d-magic">
-    <button class="detail-back" onclick="closeWorld()" data-bk="back_world">← 세계관</button>
-    <div class="detail-info" style="max-width:600px"><span class="tag">SYSTEM</span><h2 class="name" data-wn="magic">마법과 주술</h2><div class="sep"></div>
-      <div class="file-row"><span class="file-k">마법 (테베)</span><span class="file-v">왕족 전용 · 빛 · 결계 · 파괴</span></div>
-      <div class="file-row"><span class="file-k">주술 (판델)</span><span class="file-v">비특권 · 영매 · 저주 · 계약</span></div>
-      <p class="detail-desc" data-wd="magic">마법은 왕실 혈통만 사용할 수 있는 특권이다. 반면 주술은 혈통 또는 무작위 발현으로 누구나 얻을 수 있으며, 영혼과의 계약을 기반으로 한다.</p>
-    </div></div>
+  
 
-  <div class="detail" id="d-economy">
-    <button class="detail-back" onclick="closeWorld()" data-bk="back_world">← 세계관</button>
-    <div class="detail-info" style="max-width:600px"><span class="tag">SYSTEM</span><h2 class="name" data-wn="economy">경제</h2><div class="sep"></div>
-      <div class="file-row"><span class="file-k">CURRENCY</span><span class="file-v">테르 (Ter)</span></div>
-      <div class="file-row"><span class="file-k">LIVING COST</span><span class="file-v">평민 기준 월 3,000 테르</span></div>
-      <p class="detail-desc" data-wd="economy">플로리치아 운하 사업은 아마릴리스 공주 설득 후 해금되며, 디시마드 상단과의 해운 협업, 반데르 거리 VIP 업소(라피네, 살롱 드 플로라, 골든 오크)와의 F&B 협업이 가능하다.</p>
-    </div></div>
+  
+
+
+  
+
 </div>
 
 <!-- PLAY PAGE -->
@@ -613,7 +628,7 @@ const T={
     qt_joshua:'불안하면 손톱을 물어뜯고, 애원할 때 옷자락을 붙잡는다.',
     // World
     wn_tebe:'테베 제국',wn_pandel:'판델 왕국',wn_kingsley:'킹슬리 공국',
-    wn_palace:'테베 황궁',wn_huntington:'헌팅턴 대공저',wn_vander:'반데르 거리',wn_mane:'마네 거리',wn_canal:'플로리치아 운하',wn_magic:'마법과 주술',wn_economy:'경제',
+    wn_palace:'테베 황궁',wn_huntington:'헌팅턴 대공저',wn_vander:'반데르 거리',wn_mane:'마네 거리',wn_canal:'플로리치아 운하',wn_magic:'마법과 주술',
     wd_tebe:'서자는 정식 혈통으로 인정되지 않는다. 정부 문화는 성별·연령 불문 만연해 있으며, 황궁은 베르사유를 연상시키는 거대한 구조물이다.',
     wd_pandel:'마법이 아닌 주술을 사용하는 국가. 주술은 혈통이 아닌 무작위 발현 혹은 계약으로 획득한다.',
     wd_palace:'수도 중심부의 왕실 거처. 베르사유를 연상시키는 거대한 구조물로, 황궁 연회장은 아마릴리스 공주가 주관하며 장대하고 위엄 있는 공간이다.',
@@ -622,7 +637,6 @@ const T={
     wd_mane:'수도 최악의 빈민가. 차별의 낙인이 찍힌 곳.',
     wd_canal:'운하 사업 해금을 위해서는 아마릴리스 공주의 설득이 필요하다. 디시마드 상단과의 협업으로 해운업 진출이 가능하다.',
     wd_magic:'마법은 왕실 혈통만 사용할 수 있는 특권이다. 반면 주술은 혈통 또는 무작위 발현으로 누구나 얻을 수 있으며, 영혼과의 계약을 기반으로 한다.',
-    wd_economy:'플로리치아 운하 사업은 아마릴리스 공주 설득 후 해금되며, 디시마드 상단과의 해운 협업, 반데르 거리 VIP 업소(라피네, 살롱 드 플로라, 골든 오크)와의 F&B 협업이 가능하다.'
   },
   en:{
     nav_char:'Characters',nav_world:'World',nav_play:'PLAY',
@@ -647,7 +661,7 @@ const T={
     qt_samuel:'When mocking, his lips twist. When anxious, he taps his fingers.',
     qt_joshua:'When anxious, she bites her nails. When pleading, she clutches at clothes.',
     wn_tebe:'Tebe Empire',wn_pandel:'Pandel Kingdom',wn_kingsley:'Kingsley Duchy',
-    wn_palace:'Imperial Palace',wn_huntington:'Huntington Estate',wn_vander:'Vander Street',wn_mane:'Mane Street',wn_canal:'Floricia Canal',wn_magic:'Magic & Sorcery',wn_economy:'Economy',
+    wn_palace:'Imperial Palace',wn_huntington:'Huntington Estate',wn_vander:'Vander Street',wn_mane:'Mane Street',wn_canal:'Floricia Canal',wn_magic:'Magic & Sorcery',
     wd_tebe:'Illegitimate children are not recognized as official bloodline. Mistress culture is rampant regardless of gender or age, and the palace is a grand Versailles-like structure.',
     wd_pandel:'A nation that uses sorcery, not magic. Sorcery is acquired through random manifestation or contracts, not bloodline.',
     wd_palace:'The royal residence at the heart of the capital. A grand Versailles-like structure where Princess Amaryllis presides over magnificent banquet halls.',
@@ -656,7 +670,6 @@ const T={
     wd_mane:"The capital's worst slum. A place branded with the stigma of discrimination.",
     wd_canal:'Unlocking the canal business requires persuading Princess Amaryllis. Maritime trade expansion is possible through collaboration with the Decimad merchant guild.',
     wd_magic:'Magic is a privilege exclusive to royal bloodlines. In contrast, sorcery can be obtained by anyone through random manifestation and is based on contracts with spirits.',
-    wd_economy:'The Floricia Canal business unlocks after persuading Princess Amaryllis. Maritime collaboration with the Decimad guild and F&B partnerships with Vander Street VIP establishments are available.'
   },
   ja:{
     nav_char:'人物',nav_world:'世界観',nav_play:'PLAY',
@@ -681,7 +694,7 @@ const T={
     qt_samuel:'嘲る時は口角が歪み、不安な時は指を叩く。',
     qt_joshua:'不安になると爪を噛み、懇願する時は服の裾を掴む。',
     wn_tebe:'テベ帝国',wn_pandel:'パンデル王国',wn_kingsley:'キングスレー公国',
-    wn_palace:'テベ皇宮',wn_huntington:'ハンティントン大公邸',wn_vander:'ヴァンダー通り',wn_mane:'マネ通り',wn_canal:'フロリチア運河',wn_magic:'魔法と呪術',wn_economy:'経済',
+    wn_palace:'テベ皇宮',wn_huntington:'ハンティントン大公邸',wn_vander:'ヴァンダー通り',wn_mane:'マネ通り',wn_canal:'フロリチア運河',wn_magic:'魔法と呪術',
     wd_tebe:'庶子は正式な血統として認められない。愛人文化は性別・年齢を問わず蔓延しており、皇宮はヴェルサイユを彷彿とさせる巨大な建造物である。',
     wd_pandel:'魔法ではなく呪術を使用する国家。呪術は血統ではなく、ランダムな発現または契約によって獲得される。',
     wd_palace:'首都中心部の王室居城。ヴェルサイユを彷彿とさせる巨大な建造物で、皇宮宴会場はアマリリス王女が主宰する壮大な空間。',
@@ -690,7 +703,6 @@ const T={
     wd_mane:'首都最悪のスラム街。差別の烙印が押された場所。',
     wd_canal:'運河事業の解禁にはアマリリス王女の説得が必要。デシマド商団との協業で海運業進出が可能。',
     wd_magic:'魔法は王室血統のみが使用できる特権である。一方、呪術は血統またはランダムな発現で誰でも得ることができ、霊魂との契約に基づく。',
-    wd_economy:'フロリチア運河事業はアマリリス王女説得後に解禁。デシマド商団との海運協業、ヴァンダー通りVIP店舗（ラピネ、サロン・ド・フローラ、ゴールデンオーク）とのF&B協業が可能。'
   }
 };
 
@@ -791,9 +803,6 @@ function switchChar(id){
     t.classList.toggle('on',t.dataset.dc===id);
   });
   window.scrollTo({top:0,behavior:'smooth'});
-  // Update left panel for main chars
-  const mainChars=['edmund','george','samuel','joshua'];
-  const imgEl=document.getElementById&&0; // v3 doesn't have left panel
 }
 function closeChar(){
   document.querySelectorAll('#p-char .detail').forEach(d=>d.classList.remove('show'));
@@ -807,6 +816,7 @@ function openWorld(id){
   if(d)d.classList.add('show');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
 function closeWorld(){
   document.querySelectorAll('#p-world .detail').forEach(d=>d.classList.remove('show'));
   document.getElementById('worldGrid').style.display='block';
