@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>맞바람을 핀다는 건</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#070304;--bg2:#0c0608;--bg3:#10080a;
   --bdr1:#1a0a0e;--bdr2:#2a1218;--bdr3:#3a1520;
-  --red:#6b1e1e;--red-g:#8b2e2e;--red-d:#4a1414;
-  --gold:#c4a882;--gold-d:#8a7a60;
-  --body:#9a7a6a;--muted:#6a4a4a;--dark:#5a2a2a;
+  --red:#c85555;--red-g:#d46060;--red-d:#9a4040;
+  --gold:#c4a882;--gold-d:#b0a080;
+  --body:#9a7a6a;--muted:#928080;--dark:#aa7575;
   --glow:rgba(140,60,60,0.15);
 }
 html{height:100%}
@@ -31,7 +31,9 @@ a{color:inherit;text-decoration:none}
 .lang-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:12px 28px;font:16px/1 'Cormorant Garamond',serif;letter-spacing:2px;cursor:pointer;transition:.3s}
 .lang-btn:hover{border-color:var(--red);color:var(--gold)}
 .lang-divider{color:var(--bdr3);font:16px 'Cormorant Garamond',serif}
-.intro-sub{font:16px 'Cormorant Garamond',serif;color:var(--gold);letter-spacing:2px}
+.intro-subtitle{font:18px/1.6 'Cormorant Garamond',serif;color:var(--gold);letter-spacing:3px;text-align:center;margin-top:-4px}
+.intro-bgm-icon{font-size:20px;color:var(--gold-d);opacity:.5;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.7}}
 
 /* TOP BAR */
 .header{position:sticky;top:0;z-index:50;background:var(--bg)}
@@ -93,14 +95,14 @@ a{color:inherit;text-decoration:none}
 .card:hover::before{border-color:var(--bdr3)}
 .card img{width:100%;display:block;transition:transform .5s;filter:brightness(.9)}
 .card:hover img{transform:scale(1.03);filter:brightness(1)}
-.card .label{position:absolute;bottom:0;left:0;right:0;padding:12px 14px;background:linear-gradient(to top,rgba(7,3,4,.9) 30%,transparent);font:17px/1.3 'Noto Serif KR',serif;color:var(--gold);letter-spacing:1px;z-index:3}
-.section-label{font:20px/1 'Cormorant Garamond',serif;font-weight:500;color:var(--gold-d);letter-spacing:5px;margin:32px auto 16px;padding-bottom:10px;border-bottom:1px solid var(--bdr1);max-width:960px;text-align:center}
+.card .label{position:absolute;bottom:0;left:0;right:0;padding:14px 14px;background:linear-gradient(to top,rgba(7,3,4,.92) 40%,transparent);font:16px/1.3 'Noto Serif KR',serif;color:var(--gold);letter-spacing:1px;z-index:3;font-weight:400}
+.section-label{font:18px/1 'Cormorant Garamond',serif;font-weight:500;color:var(--gold);letter-spacing:5px;margin:32px auto 16px;padding-bottom:10px;border-bottom:1px solid var(--bdr1);max-width:960px;text-align:center}
 .section-label:first-child{margin-top:0}
 
 /* DETAIL */
 .detail-char-tabs{display:flex;gap:0;overflow-x:auto;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--bdr1);-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .detail-char-tabs::-webkit-scrollbar{display:none}
-.detail-char-tab{background:none;border:none;color:var(--muted);padding:6px 14px;font:15px/1 'Noto Serif KR',serif;letter-spacing:1px;cursor:pointer;white-space:nowrap;transition:.3s;position:relative;flex-shrink:0}
+.detail-char-tab{background:none;border:none;color:var(--muted);padding:6px 14px;font:14px/1 'Noto Serif KR',serif;letter-spacing:1px;cursor:pointer;white-space:nowrap;transition:.3s;position:relative;flex-shrink:0}
 .detail-char-tab:hover{color:var(--body)}
 .detail-char-tab.on{color:var(--gold)}
 .detail-char-tab.on::after{content:'';position:absolute;bottom:-1px;left:10%;right:10%;height:2px;background:var(--red)}
@@ -117,10 +119,10 @@ a{color:inherit;text-decoration:none}
 .magic-cols{display:flex;gap:32px;margin:12px 0}
 .magic-col{flex:1}
 .magic-col .file-k{display:block;margin-bottom:4px}
-.magic-desc{font:15px/1.6 'Noto Serif KR',serif;color:var(--body)}
+.magic-desc{font:14px/1.6 'Noto Serif KR',serif;color:var(--body)}
 .detail{display:none;animation:fadeUp .35s ease}
 .detail.show{display:block}
-.detail-back{background:none;border:none;color:var(--dark);font:16px 'Cormorant Garamond',serif;cursor:pointer;letter-spacing:1px;padding:0 0 16px;transition:.3s}
+.detail-back{background:none;border:none;color:var(--body);font:15px 'Noto Serif KR',serif;cursor:pointer;letter-spacing:1px;padding:0 0 16px;transition:.3s}
 .detail-back:hover{color:var(--gold-d)}
 .detail-layout{display:flex;gap:32px;align-items:flex-start;justify-content:center}
 .world-detail-wrap{position:relative;width:100%}
@@ -132,14 +134,14 @@ a{color:inherit;text-decoration:none}
 .detail-img img{display:block;max-height:70vh;width:auto;max-width:100%}
 .detail-img.emblem img{max-height:200px}
 .detail-info{flex:1;min-width:0}
-.detail-info .tag{font:15px 'Cormorant Garamond',serif;color:var(--red);letter-spacing:2px}
+.detail-info .tag{font:14px/1.4 'Noto Serif KR',serif;color:var(--red);letter-spacing:1px;font-weight:400}
 .detail-info .name{font-size:clamp(22px,3vw,30px);color:var(--gold);font-weight:400;letter-spacing:2px;margin:4px 0}
 .detail-info .sep{width:32px;height:2px;background:var(--red);margin:10px 0}
 .file-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(26,10,14,.4);font-size:16px}
-.file-k{font:15px 'Cormorant Garamond',serif;color:var(--red);letter-spacing:2px;flex-shrink:0}
+.file-k{font:13px/1 'Noto Serif KR',serif;color:var(--red);letter-spacing:1px;flex-shrink:0;font-weight:500}
 .file-v{color:var(--body);text-align:right}
 
-.detail-desc{font-size:17px;line-height:1.9;margin-top:10px;font-weight:300}
+.detail-desc{font-size:16px;line-height:1.9;margin-top:10px;font-weight:400}
 
 /* PLAY */
 .play-wrap{text-align:center;padding:60px 0}
@@ -177,6 +179,7 @@ a{color:inherit;text-decoration:none}
 <!-- INTRO -->
 <div class="intro" id="intro">
   <div class="intro-title"><img src="asset/title.webp" alt="맞바람을 핀다는 건"></div>
+  <p class="intro-subtitle">What It Means to Have an Affair&emsp;|&emsp;浮気をするということ</p>
   <div class="lang-select">
     <button class="lang-btn" onclick="start('ko')">한국어</button>
     <span class="lang-divider">|</span>
@@ -184,7 +187,7 @@ a{color:inherit;text-decoration:none}
     <span class="lang-divider">|</span>
     <button class="lang-btn" onclick="start('ja')">日本語</button>
   </div>
-  <span class="intro-sub">BGM과 함께 감상하세요</span>
+  <span class="intro-bgm-icon" title="BGM">♪</span>
 </div>
 
 <!-- TOP BAR -->
@@ -601,7 +604,6 @@ const T={
     md:['왕족 전용 · 빛 · 결계 · 파괴','비특권 · 영매 · 저주 · 계약'],
     back_char:'← 등장인물',back_world:'← 세계관',
     play_text:'캐릭터챗으로 이야기를 시작합니다.',play_btn:'이야기 시작하기 →',
-    bgm_sub:'BGM과 함께 감상하세요',
     // Character names
     nm_edmund:'에드먼드 루이스',nm_george:'조지 테베 킹슬리',nm_samuel:'새뮤얼 헌팅턴',nm_joshua:'조슈아',
     nm_moore:'무어 부인',nm_ameli:'아멜리 루이스',nm_amaryllis:'아마릴리스 공주',nm_tang:'탕크빌 영애',nm_puccini:'푸치니',
@@ -655,7 +657,6 @@ const T={
     md:['Royal exclusive · Light · Barrier · Destruction','Non-privileged · Medium · Hex · Contract'],
     back_char:'← Characters',back_world:'← World',
     play_text:'Start the story through character chat.',play_btn:'Start the Story →',
-    bgm_sub:'Best enjoyed with BGM',
     nm_edmund:'Edmund Lewis',nm_george:'George Tebe Kingsley',nm_samuel:'Samuel Huntington',nm_joshua:'Joshua',
     nm_moore:'Mrs. Moore',nm_ameli:'Amelie Lewis',nm_amaryllis:'Princess Amaryllis',nm_tang:'Lady Tankville',nm_puccini:'Puccini',
     dl_edmund:'Edmund',dl_george:'George',dl_samuel:'Samuel',dl_joshua:'Joshua',
@@ -700,7 +701,6 @@ const T={
     md:['王族専用 · 光 · 結界 · 破壊','非特権 · 霊媒 · 呪い · 契約'],
     back_char:'← 人物',back_world:'← 世界観',
     play_text:'キャラクターチャットで物語を始めます。',play_btn:'物語を始める →',
-    bgm_sub:'BGMと共にお楽しみください',
     nm_edmund:'エドマンド・ルイス',nm_george:'ジョージ・テベ・キングスレー',nm_samuel:'サミュエル・ハンティントン',nm_joshua:'ジョシュア',
     nm_moore:'ムーア夫人',nm_ameli:'アメリ・ルイス',nm_amaryllis:'アマリリス王女',nm_tang:'タンクヴィル令嬢',nm_puccini:'プッチーニ',
     dl_edmund:'エドマンド',dl_george:'ジョージ',dl_samuel:'サミュエル',dl_joshua:'ジョシュア',
