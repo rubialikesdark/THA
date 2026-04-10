@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>맞바람을 핀다는 건</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -17,7 +17,7 @@
   --glow:rgba(140,60,60,0.15);
 }
 html{height:100%}
-body{min-height:100%;background:var(--bg);color:var(--body);font-family:'Noto Serif KR',serif}
+body{min-height:100%;background:var(--bg);color:var(--body);font-family:'Noto Serif KR','Noto Serif JP',serif}
 a{color:inherit;text-decoration:none}
 
 /* INTRO */
@@ -25,13 +25,13 @@ a{color:inherit;text-decoration:none}
 .intro.out{opacity:0;visibility:hidden;pointer-events:none}
 .intro-title{width:clamp(322px,70vw,602px)}
 .intro-title img{width:100%;display:block}
-.intro-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:14px 44px;font:17px/1 'Cormorant Garamond',serif;letter-spacing:3px;cursor:pointer;transition:.3s}
+.intro-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:14px 44px;font:17px/1 'Cormorant Garamond','Noto Serif JP',serif;letter-spacing:3px;cursor:pointer;transition:.3s}
 .intro-btn:hover{border-color:var(--red);color:var(--gold)}
 .lang-select{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
-.lang-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:12px 28px;font:16px/1 'Cormorant Garamond',serif;letter-spacing:2px;cursor:pointer;transition:.3s}
+.lang-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:12px 28px;font:16px/1 'Cormorant Garamond','Noto Serif JP',serif;letter-spacing:2px;cursor:pointer;transition:.3s}
 .lang-btn:hover{border-color:var(--red);color:var(--gold)}
-.lang-divider{color:var(--bdr3);font:16px 'Cormorant Garamond',serif}
-.intro-subtitle{font:18px/1.6 'Cormorant Garamond',serif;color:var(--gold);letter-spacing:3px;text-align:center;margin-top:-4px}
+.lang-divider{color:var(--bdr3);font:16px 'Cormorant Garamond','Noto Serif JP',serif}
+.intro-subtitle{font:18px/1.6 'Cormorant Garamond','Noto Serif JP',serif;color:var(--gold);letter-spacing:3px;text-align:center;margin-top:-4px}
 .intro-bgm-icon{font-size:20px;color:var(--gold-d);opacity:.5;animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.7}}
 
@@ -52,9 +52,9 @@ a{color:inherit;text-decoration:none}
 .music button:hover{border-color:var(--red);color:var(--gold)}
 .music button.on{border-color:var(--red-g)}
 .music-mid{display:flex;flex-direction:column;gap:4px}
-.music-mid .now{font:14px/1 'Cormorant Garamond',serif;color:var(--gold-d);letter-spacing:1px}
+.music-mid .now{font:14px/1 'Cormorant Garamond','Noto Serif JP',serif;color:var(--gold-d);letter-spacing:1px}
 .music-vol{display:flex;align-items:center;gap:6px}
-.music-vol span{font:12px/1 'Cormorant Garamond',serif;color:var(--muted)}
+.music-vol span{font:12px/1 'Cormorant Garamond','Noto Serif JP',serif;color:var(--muted)}
 .vol-slider{-webkit-appearance:none;appearance:none;width:70px;height:3px;background:var(--bdr2);outline:none;cursor:pointer;border-radius:2px}
 .vol-slider::-webkit-slider-thumb{-webkit-appearance:none;width:10px;height:10px;border-radius:50%;background:var(--gold-d);cursor:pointer;transition:.2s}
 .vol-slider::-webkit-slider-thumb:hover{background:var(--gold)}
@@ -96,7 +96,7 @@ a{color:inherit;text-decoration:none}
 .card img{width:100%;display:block;transition:transform .5s;filter:brightness(.9)}
 .card:hover img{transform:scale(1.03);filter:brightness(1)}
 .card .label{position:absolute;bottom:0;left:0;right:0;padding:14px 14px;background:linear-gradient(to top,rgba(7,3,4,.92) 40%,transparent);font:16px/1.3 'Noto Serif KR',serif;color:var(--gold);letter-spacing:1px;z-index:3;font-weight:400}
-.section-label{font:18px/1 'Cormorant Garamond',serif;font-weight:500;color:var(--gold);letter-spacing:5px;margin:32px auto 16px;padding-bottom:10px;border-bottom:1px solid var(--bdr1);max-width:960px;text-align:center}
+.section-label{font:18px/1 'Cormorant Garamond','Noto Serif JP',serif;font-weight:500;color:var(--gold);letter-spacing:5px;margin:32px auto 16px;padding-bottom:10px;border-bottom:1px solid var(--bdr1);max-width:960px;text-align:center}
 .section-label:first-child{margin-top:0}
 
 /* DETAIL */
@@ -145,7 +145,7 @@ a{color:inherit;text-decoration:none}
 
 /* PLAY */
 .play-wrap{text-align:center;padding:60px 0}
-.play-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:16px 48px;font:20px/1 'Cormorant Garamond',serif;letter-spacing:3px;cursor:pointer;transition:.3s}
+.play-btn{background:none;border:1px solid var(--red-d);color:var(--gold-d);padding:16px 48px;font:20px/1 'Cormorant Garamond','Noto Serif JP',serif;letter-spacing:3px;cursor:pointer;transition:.3s}
 .play-btn:hover{border-color:var(--red);color:var(--gold)}
 
 /* MOBILE */
@@ -694,45 +694,45 @@ const T={
     wd_magic:'Magic is a privilege exclusive to royal bloodlines. In contrast, sorcery can be obtained by anyone through random manifestation and is based on contracts with spirits.',
   },
   ja:{
-    nav_char:'人物',nav_world:'世界観',nav_play:'PLAY',
+    nav_char:'キャラクター',nav_world:'世界観',nav_play:'PLAY',
     sec_main:'メイン',sec_sub:'サブ',sec_nations:'国家',sec_locations:'場所',sec_systems:'システム',
-    tab_sub:'サブ',
+    tab_sub:'サブキャラ',
     mk:['魔法（テベ）','呪術（パンデル）'],
     md:['王族専用 · 光 · 結界 · 破壊','非特権 · 霊媒 · 呪い · 契約'],
-    back_char:'← 人物',back_world:'← 世界観',
-    play_text:'キャラクターチャットで物語を始めます。',play_btn:'物語を始める →',
+    back_char:'← 登場人物',back_world:'← 世界観',
+    play_text:'キャラクターチャットで、あなただけの物語を始めましょう。',play_btn:'物語を始める →',
     nm_edmund:'エドマンド・ルイス',nm_george:'ジョージ・テベ・キングスレー',nm_samuel:'サミュエル・ハンティントン',nm_joshua:'ジョシュア',
     nm_moore:'ムーア夫人',nm_ameli:'アメリ・ルイス',nm_amaryllis:'アマリリス王女',nm_tang:'タンクヴィル令嬢',nm_puccini:'プッチーニ',
     dl_edmund:'エドマンド',dl_george:'ジョージ',dl_samuel:'サミュエル',dl_joshua:'ジョシュア',
     dl_moore:'ムーア夫人',dl_ameli:'アメリ',dl_amaryllis:'アマリリス',dl_tang:'タンクヴィル',dl_puccini:'プッチーニ',
-    tg_edmund:'キングスレー大公の騎士・伯爵家長男',tg_george:'キングスレー公国大公・皇族',tg_samuel:'ハンティントン公爵',tg_joshua:'公爵の愛人',
-    tg_moore:'ハンティントン大公邸主席侍女',tg_ameli:'伯爵家令嬢',tg_amaryllis:'皇族',tg_tang:'フレデリック3世の恋人',tg_puccini:'デシマド商団長',
+    tg_edmund:'キングスレー大公の騎士・伯爵家長男',tg_george:'キングスレー公国大公・皇族',tg_samuel:'ハンティントン公爵',tg_joshua:'ハンティントン公爵の愛人',
+    tg_moore:'ハンティントン大公邸 筆頭侍女',tg_ameli:'伯爵家令嬢',tg_amaryllis:'皇族',tg_tang:'フレデリック 3世の寵姫',tg_puccini:'デシマド商団長',
     fr_edmund:['190cm','黒髪 · 紫の瞳','屈強で引き締まった体格','6w5 sp/so','忠実 · 勤勉 · 献身的','騎士の義務の失敗','正しい選択で弱者を守ること'],
-    fr_george:['180cm','金髪 · 金の瞳','舞踏家のような細い筋肉','3w4 sx/so','優雅 · ナルシシズム · 余裕','制御力の喪失','環境と運命に対する絶対的支配'],
-    fr_samuel:['175cm','茶髪 · 茶色の瞳','痩せ型（運動なし）','7w8 sp/sx','貪欲 · 日和見 · 皮肉','地位と権力の喪失','究極の成功 — ジョージの権力を渇望'],
-    sfr_moore:['55歳','サミュエルの元乳母','ジョシュアを敵視 / あなたに好意的'],
-    sfr_ameli:['22歳','エドマンドの妹','優しい · おしゃれ好き','あなたに好意的'],
+    fr_george:['180cm','金髪 · 金の瞳','舞踏家のようなしなやかな筋肉','3w4 sx/so','優雅 · ナルシシズム · 余裕','制御力の喪失','環境と運命に対する絶対的支配'],
+    fr_samuel:['175cm','茶髪 · 茶色の瞳','痩せ型（運動なし）','7w8 sp/sx','貪欲 · 日和見 · 皮肉屋','地位と権力の喪失','究極の成功 — ジョージの権力を渇望'],
+    sfr_moore:['55歳','サミュエルの元乳母','ジョシュアを敵視しつつ、あなたには非常に好意的'],
+    sfr_ameli:['22歳','エドマンドの妹','優しい · 着飾るのが好き','あなたに好意的'],
     sfr_amaryllis:['53歳','フレデリック3世の姉','ジョージと同盟','フロリチア運河所有 · 魔法使用'],
     sfr_tang:['24歳','絶世の美女 · 皮肉屋','フレデリック3世以外にも複数の恋人'],
     sfr_puccini:['50歳','あなたの実母の古い友人','あなたの出生の秘密を知っている'],
-    fr_joshua:['160cm','金髪 · 金の瞳','小柄な体格','4w3 sx/sp','幼稚 · 依存的 · 必死','見捨てられること','真実の愛と安定'],
-    ds_edmund:'アメリの兄。皇宮の宴であなたと初めて出会った。騎士道への忠誠とあなたへの保護本能の間で絶え間なく葛藤する。',
-    ds_george:'フレデリック3世の弟。王室魔法を操り反逆を企てる。あなたを駒として利用しようとするが、感情が介入し制御力を失っていく。',
-    ds_samuel:'あなたの夫。ジョシュアを愛人として隠している。ジョージの友人でありながら、その権力を狙う。あなたを道具であり装飾品と見なす。',
-    ds_joshua:'出生不明。サミュエルに依存し、大邸宅に孤立している。あなたを敵視しながらも、生存のためにあなたにすがる。',
-    ds_moore:'あなたが公爵夫人としての権威を取り戻すことを望んでいる。支配的だが、あなたには丁重。',
-    ds_puccini:'深い信頼を得て初めて秘密を明かす。',
+    fr_joshua:['160cm','金髪 · 金の瞳','小柄な体格','4w3 sx/sp','幼稚 · 依存的 · 切実','見捨てられること','真実の愛と安定'],
+    ds_edmund:'アメリの兄。皇宮の華やかな宴であなたと初めて出会った。騎士道への忠誠と、あなたを守りたいという強い保護本能の間で、絶えず心が揺れ動いている。',
+    ds_george:'フレデリック 3世の弟。王室魔法を操り反逆を企てている。あなたを駒として利用しようとする一方で、感情が介入するにつれ制御力を失っていく……。',
+    ds_samuel:'あなたの夫。ジョシュアを愛人として隠している。ジョージの友人でありながら、その権力を狙う。あなたを道具であり、華やかな飾り物としか見なしていない。',
+    ds_joshua:'出生不明。サミュエルに依存し、大邸宅に孤立している。あなたを敵視しながらも、生き延びるために必死にすがりついてくる。',
+    ds_moore:'あなたが公爵夫人としての権威を取り戻すことを心から願っている。支配的だが、あなたに対しては常に丁重である。',
+    ds_puccini:'深い信頼を勝ち取って初めて、彼女は本当の秘密を明かす。',
     
     
     
     
     wn_tebe:'テベ帝国',wn_pandel:'パンデル王国',wn_kingsley:'キングスレー公国',
     wn_palace:'テベ皇宮',wn_huntington:'ハンティントン大公邸',wn_vander:'ヴァンダー通り',wn_mane:'マネ通り',wn_canal:'フロリチア運河',wn_magic:'魔法と呪術',
-    wd_tebe:'庶子は正式な血統として認められない。愛人文化は性別・年齢を問わず蔓延しており、皇宮はヴェルサイユを彷彿とさせる巨大な建造物である。',
+    wd_tebe:'庶子は正式な血統として認められない。愛人文化は性別・年齢を問わず宮廷全体に蔓延しており、皇宮はヴェルサイユを彷彿とさせる、華麗で退廃的な巨大建造物である。',
     wd_pandel:'魔法ではなく呪術を使用する国家。呪術は血統ではなく、ランダムな発現または契約によって獲得される。',
     wd_palace:'首都中心部の王室居城。ヴェルサイユを彷彿とさせる巨大な建造物で、皇宮宴会場はアマリリス王女が主宰する壮大な空間。',
     wd_huntington:'あなたとサミュエル、ジョシュアが共に暮らす公爵邸。',
-    wd_vander:'ブルジョワと貴族専用区域。厳格な身分確認と高いセキュリティが維持される。最高級宝石商ロゼラ、高級レストランラピネ、プレミアムティーサロン・ド・フローラ、最上級酒ゴールデンオークが位置する。',
+    wd_vander:'ブルジョワと貴族専用の高級区域。厳重な身分確認とセキュリティの下、最高級宝石商ロゼラ、高級レストラン ラピネ、プレミアムティーサロン・ド・フローラ、最上級酒ゴールデンオークが軒を連ねる、優雅で妖しい通り。',
     wd_mane:'首都最悪のスラム街。差別の烙印が押された場所。',
     wd_canal:'運河事業の解禁にはアマリリス王女の説得が必要。デシマド商団との協業で海運業進出が可能。',
     wd_magic:'魔法は王室血統のみが使用できる特権である。一方、呪術は血統またはランダムな発現で誰でも得ることができ、霊魂との契約に基づく。',
@@ -860,9 +860,10 @@ function tab(id,push=true){
   window.scrollTo(0,0);
 }
 function openChar(id,push=true){
+  const d=document.getElementById('d-'+id);
+  if(d&&d.classList.contains('show')){closeChar(push);return}
   document.getElementById('charGrid').style.display='none';
   document.querySelectorAll('#p-char .detail').forEach(d=>d.classList.remove('show'));
-  const d=document.getElementById('d-'+id);
   if(d)d.classList.add('show');
   document.querySelectorAll('.detail-char-tab').forEach(t=>{
     t.classList.toggle('on',t.dataset.dc===id);
