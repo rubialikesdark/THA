@@ -587,7 +587,7 @@ a{color:inherit;text-decoration:none}
 <div class="page" id="p-play">
   <div class="play-wrap">
     <p style="color:var(--body);font-size:18px;margin-bottom:24px">캐릭터챗으로 이야기를 시작합니다.</p>
-    <button class="play-btn">이야기 시작하기 →</button>
+    <button class="play-btn" onclick="goPlay()">이야기 시작하기 →</button>
   </div>
 </div>
 
@@ -846,6 +846,11 @@ function setVol(v){bgm.volume=v/100}
 function toggleM(){
   if(playing){bgm.pause();playing=false;mBtn.classList.remove('on');mIco.textContent='▶'}
   else{bgm.play().then(()=>{playing=true;mBtn.classList.add('on');mIco.textContent='⏸'}).catch(()=>{})}
+}
+function goPlay(){
+  const urls={ko:'https://velvetalk.com/contents/1e96aa1b-fa3d-409d-930e-fac55f2cf0c9',en:'https://velvetalk.com/contents/b7bdf26c-da4c-47e0-9a5f-5ed311ee365c'};
+  const u=urls[currentLang];
+  if(u)window.open(u,'_blank');
 }
 function tab(id,push=true){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
